@@ -32,7 +32,9 @@ RUN rm -rf /var/cache/apk/*
 
 WORKDIR /source
 
-ADD . ./
+ADD src/ ./
+
+ADD armhf/repositories /etc/apk/
 
 EXPOSE 8888
 
