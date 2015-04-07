@@ -21,7 +21,7 @@ RUN curl -L https://github.com/kernelsauce/turbo/archive/v.$TURBO_VERSION.tar.gz
   cd turbo-v.$TURBO_VERSION && \
   make LUAJIT_VERSION=$LUAJIT_VERSION && \
   make install && \
-  cd .. && \cd ..
+  cd .. && \ 
   rm -rf turbo-v.$TURBO_VERSION turbo-$TURBO_VERSION.tar
 
 RUN ["apk", "del", "build-base", "openssl-dev", "curl"]
@@ -32,7 +32,7 @@ RUN rm -rf /var/cache/apk/*
 
 WORKDIR /source
 
-ADD . ./
+ADD src/ ./
 
 EXPOSE 8888
 
