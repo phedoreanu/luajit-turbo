@@ -4,6 +4,8 @@ MAINTAINER Adrian Fedoreanu, adrian.fedoreanu@gmail.com
 ENV LUAJIT_VERSION 2.0.3
 ENV TURBO_VERSION 1.1.1
 
+ADD armhf/repositories /etc/apk/
+
 RUN ["apk", "--update", "add", "build-base", "openssl-dev", "curl"] 
 
 RUN wget http://luajit.org/download/LuaJIT-$LUAJIT_VERSION.tar.gz && \
@@ -33,8 +35,6 @@ RUN rm -rf /var/cache/apk/*
 WORKDIR /source
 
 ADD src/ ./
-
-ADD armhf/repositories /etc/apk/
 
 EXPOSE 8888
 
