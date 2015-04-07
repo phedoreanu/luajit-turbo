@@ -4,7 +4,7 @@ MAINTAINER Adrian Fedoreanu, adrian.fedoreanu@gmail.com
 ENV LUAJIT_VERSION 2.0.3
 ENV TURBO_VERSION 1.1.1
 
-ADD ./repositories /etc/apk/
+ADD repositories /etc/apk/
 
 RUN ["apk", "--update", "add", "build-base", "openssl-dev", "curl"] 
 
@@ -23,7 +23,7 @@ RUN curl -L https://github.com/kernelsauce/turbo/archive/v.$TURBO_VERSION.tar.gz
   cd turbo-v.$TURBO_VERSION && \
   make LUAJIT_VERSION=$LUAJIT_VERSION && \
   make install && \
-  cd .. && \cd ..
+  cd .. && \
   rm -rf turbo-v.$TURBO_VERSION turbo-$TURBO_VERSION.tar
 
 RUN ["apk", "del", "build-base", "openssl-dev", "curl"]
