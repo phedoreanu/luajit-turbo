@@ -4,7 +4,7 @@ MAINTAINER Adrian Fedoreanu, adrian.fedoreanu@gmail.com
 ENV LUAJIT_VERSION 2.0.3
 ENV TURBO_VERSION 1.1.1
 
-ADD armhf/repositories /etc/apk/
+ADD .repositories /etc/apk/
 
 RUN ["apk", "--update", "add", "build-base", "openssl-dev", "curl"] 
 
@@ -34,7 +34,7 @@ RUN rm -rf /var/cache/apk/*
 
 WORKDIR /source
 
-ADD src/ ./
+ADD ../src/ ./
 
 EXPOSE 8888
 
