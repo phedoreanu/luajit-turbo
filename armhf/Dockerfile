@@ -34,7 +34,7 @@ RUN rm -rf /var/cache/apk/*
 
 WORKDIR /source
 
-ADD ../src/ ./
+ADD src/ ./
 
 EXPOSE 8888
 
