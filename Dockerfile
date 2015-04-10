@@ -31,9 +31,4 @@ RUN ["apk", "add", "libgcc"]
 RUN rm -rf /var/cache/apk/*
 
 WORKDIR /source
-
-ADD src/ ./
-
-EXPOSE 8888
-
-ENTRYPOINT ["luajit", "json-server.lua"]
+CMD ["luajit"]
