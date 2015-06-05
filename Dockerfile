@@ -1,8 +1,10 @@
-FROM alpine:3.1
-MAINTAINER Adrian Fedoreanu, adrian.fedoreanu@gmail.com
+FROM armbuild/alpine:3.1
+MAINTAINER Adrian Fedoreanu <adrian.fedoreanu@gmail.com>
 
 ENV LUAJIT_VERSION 2.0.4
 ENV TURBO_VERSION 1.1.4
+
+ADD apk/repositories /etc/apk/
 
 RUN ["apk", "--update", "add", "build-base", "openssl-dev", "curl"] 
 
