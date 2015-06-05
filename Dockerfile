@@ -1,4 +1,4 @@
-FROM armbuild/alpine:3.1
+FROM armbuild/alpine:latest
 MAINTAINER Adrian Fedoreanu <adrian.fedoreanu@gmail.com>
 
 ENV LUAJIT_VERSION 2.0.4
