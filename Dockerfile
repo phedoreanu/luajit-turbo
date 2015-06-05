@@ -1,4 +1,4 @@
-FROM alpine:3.1
+FROM alpine:latest
 MAINTAINER Adrian Fedoreanu <adrian.fedoreanu@gmail.com>
 
 ENV LUAJIT_VERSION 2.0.4
